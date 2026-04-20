@@ -1,3 +1,5 @@
+--require("config.autoCommands")
+--require("config.globals")
 require("config.keybinds")
-require("config.options")
 require("config.lazy")
+--require("config.options")
