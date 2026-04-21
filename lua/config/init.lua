@@ -1,5 +1,0 @@
---require("config.autoCommands")
---require("config.globals")
-require("config.keybinds")
-require("config.lazy")
---require("config.options")
