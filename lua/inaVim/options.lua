@@ -1,5 +1,5 @@
 --Allow clipboard to sync with sys clipboard
---Its cheduled becouse can cause delay
+--Its scheduled becouse can cause delay
 vim.schedule(function() vim.o.clipboard = "unnamedplus" end)
 
 --Line numbers
@@ -7,7 +7,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 --Enable mouse mode
-vim.o.mouse = "a"
+--vim.o.mouse = "a"
 
 -- Enable break indent
 vim.o.breakindent = true
