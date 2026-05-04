@@ -6,6 +6,7 @@ return {
 		lazy = false,
 		build = ":TSUpdate",
 		config = function()
+			-- add nex languages here
 			local langs = { 'go', 'gomod', 'gosum', 'lua', 'html', 'bash' } 
 			require('nvim-treesitter').install(langs)
 			vim.api.nvim_create_autocmd('FileType', {

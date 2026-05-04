@@ -1,5 +1,9 @@
 -- configs for specific lsp server
 --
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+vim.lsp.config('*', {
+	capabilities = capabilities,
+})
 vim.lsp.config('lua_ls', {
 	settings = { Lua = { diagnostics = { globals = { 'vim' }}}}
 })
@@ -11,6 +15,17 @@ vim.lsp.config('qmlls', {
 -- pluguin for handling the lsp
 --
 return {
+	{
+		'mason-org/mason-lspconfig.nvim',
+		opts = {
+			-- use the vim.lsp.config names! source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+			ensure_installed = { "lua_ls", "gopls" }
+		},
+		dependencies = {
+			'mason-org/mason.nvim',
+			'neovim/nvim-lspconfig',
+		},
+	},
 	{
 		'mason-org/mason.nvim',
 		opts = {
@@ -46,15 +61,4 @@ return {
 		end
 
 	},
-	{
-		'mason-org/mason-lspconfig.nvim',
-		opts = {
-			-- use the vim.lsp.config names! source: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-			ensure_installed = { "lua_ls", "gopls" }
-		},
-		dependencies = {
-			'mason-org/mason.nvim',
-			'neovim/nvim-lspconfig',
-		},
-	}
 }
